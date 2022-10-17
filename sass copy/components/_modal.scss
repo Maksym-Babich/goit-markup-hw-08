@@ -1,7 +1,6 @@
 .modal-bg {
   width: 100vw;
   height: 100vh;
-  min-width: 320px;
 
   position: fixed;
   left: 0;
@@ -14,44 +13,16 @@
   transition: opacity $anim-func $anim-time, visibility $anim-func $anim-time;
 }
 
-.modal-bg--is-hidden {
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-
-  & .modal-window {
-    transform: translate(-50%, -50%) scale(1.2, 1.2);
-  }
-}
-
 .modal-window {
   position: absolute;
-  max-height: 609px;
-  width: calc(100vw - 30px);
-  min-width: 320px;
-  margin: auto;
-
+  left: 50%;
+  top: 50%;
+  width: 528px;
+  height: 581px;
   padding: 40px;
-  overflow-y: scroll;
-  text-align: center;
-  transform: scale(1, 1);
+  transform: translate(-50%, -50%) scale(1, 1);
   background-color: #ffffff;
   transition: transform $anim-time $anim-func;
-
-  @media screen and (max-height: 609px) {
-    left: 15px;
-    top: 0;
-    right: 15px;
-    bottom: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  @media screen and (min-height: 610px) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
 
 .btn-close {
@@ -61,19 +32,22 @@
   height: 30px;
   width: 30px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  color: $nav-logo-color;
 
   cursor: pointer;
 }
 
 .btn-close svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50, -50);
   fill: currentColor;
 }
 
@@ -82,62 +56,29 @@
   color: $active-color;
 }
 
-.modal-window__title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: 0.03em;
-  color: $title-text-color;
+.modal-bg--is-hidden {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-bg--is-hidden .modal-window {
+  transform: translate(-50%, -50%) scale(1.2, 1.2);
+}
+
+.get-contacts-form {
 }
 
 .form-fields {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
-.form-item {
-  display: block;
-
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
-}
-
-.input-field {
-  position: relative;
-  color: $nav-logo-color;
-  transition: color $anim-time $anim-func;
-}
-
-.input-field:focus-within {
-  color: $active-color;
-}
-
-.form-item:hover .input-field {
-  color: $active-color;
-}
-
-.field-icon {
-  fill: currentColor;
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.modal-submit {
-  @extend %button;
-  display: block;
-  margin: 0 auto;
-  padding: 10px 52px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
+.form-fields label:not(:last-child) {
+  padding-bottom: 10px;
 }
 
 .form-item span {
   display: block;
-  text-align: left;
   padding-bottom: 4px;
 
   font-weight: 400;
@@ -149,11 +90,11 @@
 }
 
 .form-fields input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
   width: 100%;
   height: 40px;
   padding-left: 46px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
   font-size: 12px;
   line-height: 1.16;
   transition: border $anim-time $anim-func;
@@ -203,7 +144,7 @@
   width: 16px;
   height: 15px;
   border: 2px solid #000000;
-  left: 0;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   transition: background-color $anim-func $anim-time, border $anim-func $anim-time;
@@ -229,12 +170,11 @@
   border-color: transparent;
 }
 
-.policy-agreement__text {
-  margin-left: 22px;
-  display: inline-block;
+.policy-agreement span {
+  display: inline;
   font-weight: 400;
-  font-size: 12px;
-  line-height: calc(14 / 12);
+  font-size: 14px;
+  line-height: 1.71;
   letter-spacing: 0.03em;
 
   color: $text-color;
@@ -248,4 +188,53 @@
 .policy-agreement a:hover,
 .policy-agreement a:focus {
   color: #0f528a;
+}
+
+.modal-window__title {
+  padding-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: $title-text-color;
+}
+
+.form-item {
+  display: block;
+}
+
+.input-field {
+  position: relative;
+  color: $nav-logo-color;
+  transition: color $anim-time $anim-func;
+}
+
+.input-field:focus-within {
+  color: $active-color;
+}
+
+.form-item:hover .input-field {
+  color: $active-color;
+}
+
+.field-icon {
+  fill: currentColor;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-submit {
+  @extend %button;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 52px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
 }

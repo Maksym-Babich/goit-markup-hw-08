@@ -1,62 +1,87 @@
 .page-footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   background-color: $foo-bc-color;
-  text-align: center;
+}
+
+.page-footer__content {
+  display: flex;
+  align-items: baseline;
+}
+
+.contacts-section {
+  margin-right: 70px;
+  width: 231px;
 }
 
 .page-footer__logo {
-  display: block;
+  display: inline-block;
   color: $white-text-color;
   margin-bottom: 20px;
 }
 
-.page-footer__adress {
-  font-style: inherit;
-  margin-bottom: 60px;
+.logo--blue {
 }
-
+.page-footer__adress {
+  font-style: normal;
+}
+.page-footer__conteacts-list {
+}
+.page-footer__contacts-list-item {
+}
 .page-footer__location {
+  display: inline-block;
+  color: $white-text-color;
+  margin-bottom: 9px;
+
   font-weight: 400;
   font-size: 14px;
-  line-height: calc(24 / 14);
+  line-height: 1.71;
   letter-spacing: 0.03em;
-  color: $white-text-color;
-}
+  transition: color $anim-func $anim-time;
 
-.page-footer__contacts-list-item {
-  &:not(:last-child) {
-    margin-bottom: 8px;
+  &:hover,
+  &:focus {
+    color: $active-color;
   }
 }
-
 .page-footer__contacts-item {
+  display: inline-block;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: $foo-contacts-color;
+  transition: color $anim-func $anim-time;
+
+  &:hover,
+  &:focus {
+    color: $active-color;
+  }
+}
+
+.page-footer__contacts-item--upper {
+  margin-bottom: 9px;
 }
 
 .social-net-section {
-  margin-bottom: 60px;
+  margin-right: 93px;
 }
-
 .social-net-section__heading {
   display: inline-block;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
-  line-height: calc(16 / 14);
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: $white-text-color;
 }
-
 .social-net-section__list {
   display: flex;
-  justify-content: center;
   gap: 10px;
 }
 
@@ -81,33 +106,34 @@
 .social-net-section__icon {
   fill: currentColor;
 }
-
+.subscribe-section {
+}
 .subscribe-section__heading {
   display: block;
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
-  line-height: calc(16 / 14);
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: $white-text-color;
 }
-
+.subscribe-section__form {
+}
 .subscribe-section__input {
-  width: 100%;
-  margin-bottom: 20px;
+  width: 358px;
   padding: 15px 16px;
+  margin-right: 12px;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
   color: $white-text-color;
-
-  &:focus,
-  &:hover {
-    border-color: $white-text-color;
-  }
 }
-
 .subscribe-section__button {
   @extend %button;
   display: inline-flex;
@@ -120,10 +146,11 @@
     background-color: $secondary-active-color;
   }
 }
-
 .subscribe-section__button-text {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+}
+.subscribe-section__button-icon {
 }
