@@ -2,16 +2,30 @@
   padding-top: 60px;
   padding-bottom: 60px;
   text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .features-section__heading {
   @extend .visually-hidden;
 }
 
-.features-list__feature {
-  &:not(:last-child) {
-    margin-bottom: 30px;
+.features-list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
   }
+}
+
+.features-list__feature {
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  flex-basis: calc((100% - 30px) / 2);
 }
 
 .features-list__icon-bg {

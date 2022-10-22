@@ -14,6 +14,13 @@
   letter-spacing: 0.03em;
   color: $title-text-color;
 }
+.team-setion__members-list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+}
 
 .member-card {
   background-color: $main-bc-color;
@@ -22,8 +29,14 @@
   border-radius: 0px 0px 4px 4px;
   padding-bottom: 24px;
 
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 30px) / 2);
   }
 }
 
@@ -58,8 +71,20 @@
   gap: 10px;
 }
 
+.member-card__list-item {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .member-card__link {
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   color: $social-net-link-color;
 }
 
