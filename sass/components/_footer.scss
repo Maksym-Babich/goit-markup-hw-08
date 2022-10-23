@@ -4,6 +4,10 @@
   margin: 0 auto;
   background-color: $foo-bc-color;
   text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    text-align: left;
+  }
 }
 
 .page-footer__content {
@@ -12,12 +16,22 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  @media screen and (min-width: 1200px) {
+    flex-wrap: nowrap;
+    justify-content: baseline;
+  }
 }
 
 .contacts-section {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     margin-right: 165px;
     margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 70px;
+    width: 231px;
   }
 }
 
@@ -25,11 +39,18 @@
   display: block;
   color: $white-text-color;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 1200px) {
+    display: inline-block;
+  }
 }
 
 .page-footer__adress {
   font-style: inherit;
-  margin-bottom: 60px;
+
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
 }
 
 .page-footer__location {
@@ -38,11 +59,27 @@
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
   color: $white-text-color;
+
+  @media screen and (min-width: 1200px) {
+    display: inline-block;
+    margin-bottom: 9px;
+    transition: color $anim-func $anim-time;
+
+    &:hover,
+    &:focus {
+      color: $active-color;
+    }
+  }
 }
 
 .page-footer__contacts-list-item {
   &:not(:last-child) {
     margin-bottom: 8px;
+  }
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
   }
 }
 
@@ -52,10 +89,26 @@
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: $foo-contacts-color;
+
+  @media screen and (min-width: 1200px) {
+    display: inline-block;
+    transition: color $anim-func $anim-time;
+
+    &:hover,
+    &:focus {
+      color: $active-color;
+    }
+  }
 }
 
 .social-net-section {
-  margin-bottom: 60px;
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+  }
 }
 
 .social-net-section__heading {
@@ -108,19 +161,38 @@
   color: $white-text-color;
 }
 
+.subscribe-section__label {
+  @media screen and (min-width: 1200px) {
+    display: inline-block;
+  }
+}
+
 .subscribe-section__input {
   width: 100%;
   max-width: 450px;
-  margin-bottom: 20px;
   padding: 15px 16px;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   color: $white-text-color;
 
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
   &:focus,
   &:hover {
     border-color: $white-text-color;
+  }
+
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 358px;
+    margin-right: 12px;
   }
 }
 

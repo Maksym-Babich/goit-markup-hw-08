@@ -4,6 +4,11 @@
   margin: 0 auto;
   background-color: $secondary-bc-color;
   text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .team-section__heading {
@@ -37,6 +42,10 @@
 
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 30px) / 2);
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 90px) / 4);
   }
 }
 
@@ -86,6 +95,14 @@
   width: 100%;
   height: 100%;
   color: $social-net-link-color;
+  transition: background-color $anim-func $anim-time;
+  transition: color $anim-func $anim-time;
+
+  &:hover,
+  &:focus {
+    background-color: $active-color;
+    color: $white-text-color;
+  }
 }
 
 .member-card__social-net-icon {

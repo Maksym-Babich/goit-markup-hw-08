@@ -4,6 +4,11 @@
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .features-section__heading {
@@ -26,6 +31,10 @@
   }
 
   flex-basis: calc((100% - 30px) / 2);
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 90px) / 4);
+  }
 }
 
 .features-list__icon-bg {
